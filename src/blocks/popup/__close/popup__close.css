@@ -14,7 +14,7 @@
     transition: opacity 0.2s linear;
 }
 
-.popup__close:hover, :focus {
+.popup__close:hover {
     cursor: pointer;
     opacity: 0.6;
 }

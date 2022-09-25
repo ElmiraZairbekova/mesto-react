@@ -1,4 +1,4 @@
-export default class Api {
+class Api {
     constructor({ headers, baseUrl }) {
       this._headers = headers;
       this._baseUrl = baseUrl;
@@ -26,30 +26,32 @@ export default class Api {
       }).then(this._checkResponse);
     }
   
-    getPageNeedData() {
-      return Promise.all([this.getInitialCards(), this.getUserInfo()]);
-    }
-  
-    updateUserInfo(body) {
+    updateUserInfo(data) {
       const requestUrl = this._baseUrl + '/users/me';
       return fetch(requestUrl, {
         method: 'PATCH',
         headers: this._headers,
-        body: JSON.stringify(body),
+        body: JSON.stringify({
+          name: data.profile_name,
+          about: data.profile_description
+        })
       }).then(this._checkResponse);
     }
   
-    addNewCard(body) {
+    addNewCard(data) {
       const requestUrl = this._baseUrl + '/cards';
       return fetch(requestUrl, {
         method: 'POST',
         headers: this._headers,
-        body: JSON.stringify(body),
+        body: JSON.stringify({
+          name: data.name,
+          link: data.link
+        }),
       }).then(this._checkResponse);
     }
   
-    removeCard(cardId) {
-      const requestUrl = this._baseUrl + `/cards/${cardId}`;
+    removeCard(data) {
+      const requestUrl = this._baseUrl + `/cards/${data._id}`;
       return fetch(requestUrl, {
         method: 'DELETE',
         headers: this._headers,
@@ -72,20 +74,21 @@ export default class Api {
       }).then(this._checkResponse);
     }
   
-    updateProfileAvatar(body) {
+    updateProfileAvatar(data) {
       const requestUrl = this._baseUrl + `/users/me/avatar`;
       return fetch(requestUrl, {
         method: 'PATCH',
         headers: this._headers,
-        body: JSON.stringify(body),
+        body: JSON.stringify({avatar: data.avatar_link}),
       }).then(this._checkResponse);
     }
   }
 
-  export const api = new Api({
+    const api = new Api({
     baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-47',
-  headers: {
+    headers: {
     authorization: 'cbd1d19b-554f-435c-9a41-b799d284e240',
     'Content-Type': 'application/json'
     },
 });
+export default api;

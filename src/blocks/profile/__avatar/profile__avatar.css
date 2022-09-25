@@ -6,9 +6,3 @@
   border-radius: 50%;
   z-index: -1;
 }
-
-@media screen and (max-width: 1279px) {
-    .profile__avatar {
-        margin: 0 0 27px;
-}
-}

@@ -5,7 +5,7 @@ import React from 'react';
 import logo from '../images/logo.svg';
 
 //  Рендерим компонент JSX компонента шапки  //
-const Header = () => {
+function Header() {
   return (
     <header className="header">
         <img className="header__logo" src={logo} alt="логотип" />

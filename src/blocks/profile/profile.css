@@ -2,7 +2,7 @@
     max-width: 880px;
     margin: 0 auto;
     display: flex;
-    position: relative;
+    /* position: relative; */
     padding: 40px 0 51px 0;
     align-items: center;
 }

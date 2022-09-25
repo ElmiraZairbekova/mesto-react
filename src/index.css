@@ -1,3 +1,6 @@
+body {
+    background: #000;
+  }
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts/Inter.css);
 @import url(./blocks/root/root.css);
@@ -40,4 +43,5 @@
 @import url(./blocks/popup/__input/_type/popup__input_type_error.css);
 @import url(./blocks/popup/__confirm/popup__confirm.css);
 @import url(./blocks/element/__likes-count/element__likes-count.css);
-@import url(./blocks/element/__likes-container/element__likes-container.css)
+@import url(./blocks/element/__likes-container/element__likes-container.css);
+@import url(./blocks/element/__button-trash/_active/element__button-trash_active.css)
