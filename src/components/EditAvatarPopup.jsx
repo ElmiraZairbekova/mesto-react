@@ -8,7 +8,7 @@ function EditAvatarPopup(props) {
     evt.preventDefault();
 
     props.onSubmit({
-      avatar_link: ref.current.value,
+      avatarLink: ref.current.value,
     });
   }
 
@@ -24,7 +24,7 @@ function EditAvatarPopup(props) {
       name={"avatar"}
       form={"updateAvatar"}
       title={"Обновить аватар"}
-      buttonText={"Сохранить"}
+      buttonText={props.isLoading ? "Сохранение..." : "Сохранить"}
       onSubmit={handleSubmit}
     >
       <input

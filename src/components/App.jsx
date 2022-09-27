@@ -136,6 +136,7 @@ function App() {
   }
 
   function handleAvatarUpdate(data) {
+    setIsLoading(true);
     api
       .updateProfileAvatar(data)
       .then((newAvatar) => {
@@ -144,6 +145,9 @@ function App() {
       })
       .catch((err) => {
         console.error(err);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }
 
@@ -209,6 +213,7 @@ function App() {
           onCloseClick={handlePopupCloseClick}
           onClose={closeAllPopups}
           onSubmit={handleAvatarUpdate}
+          isLoading={isLoading}
         />
 
         <ImagePopup
