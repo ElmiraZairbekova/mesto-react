@@ -8,29 +8,37 @@ function EditAvatarPopup(props) {
     evt.preventDefault();
 
     props.onSubmit({
-      avatar_link: ref.current.value
+      avatar_link: ref.current.value,
     });
   }
 
   React.useEffect(() => {
-    ref.current.value = '';
+    ref.current.value = "";
   }, [props.isOpen]);
 
-  return(
-    <PopupWithForm 
+  return (
+    <PopupWithForm
       isOpen={props.isOpen}
       onCloseClick={props.onCloseClick}
       onClose={props.onClose}
-      name={'avatar'}
-      form={'updateAvatar'}
-      title={'Обновить аватар'}
-      buttonText={'Сохранить'}
+      name={"avatar"}
+      form={"updateAvatar"}
+      title={"Обновить аватар"}
+      buttonText={"Сохранить"}
       onSubmit={handleSubmit}
     >
-      <input ref={ref} className="popup__input" id="avatar_link" name="avatar_link" type="url" placeholder="Ссылка на аватар" required/>
-      <span className="popup__input-error" id="avatar_link-error"/>
+      <input
+        ref={ref}
+        className="popup__input"
+        id="avatar_link"
+        name="avatar_link"
+        type="url"
+        placeholder="Ссылка на аватар"
+        required
+      />
+      <span className="popup__input-error" id="avatar_link-error" />
     </PopupWithForm>
-  )
+  );
 }
 
 export default EditAvatarPopup;

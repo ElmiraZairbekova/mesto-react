@@ -16,7 +16,7 @@
   right: 20px;
   z-index: 1;
 }
-  
+
 .element__button-trash:hover {
-  opacity: .5;
+  opacity: 0.5;
 }

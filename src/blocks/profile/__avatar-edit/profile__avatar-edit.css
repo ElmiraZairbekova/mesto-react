@@ -10,7 +10,7 @@
   transition: background-color 0.2s linear;
 }
 
- .profile__avatar-edit:hover {
+.profile__avatar-edit:hover {
   background-color: rgba(0, 0, 0, 0.8);
   background-image: url(../../../images/avatar-edit.svg);
   background-size: 26px 26px;
@@ -20,7 +20,7 @@
 }
 
 @media screen and (max-width: 1023px) {
-  .profile__avatar-edit  {
+  .profile__avatar-edit {
     margin: 0 0 27px 0;
   }
 }
